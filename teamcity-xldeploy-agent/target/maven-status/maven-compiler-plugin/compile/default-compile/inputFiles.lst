@@ -1,0 +1,9 @@
+/Users/user/repo/teamcity-xldeploy-plugin/teamcity-xldeploy-agent/src/main/java/jetbrains/buildServer/xldeploy/agent/XldDeployBuildProcess.java
+/Users/user/repo/teamcity-xldeploy-plugin/teamcity-xldeploy-agent/src/main/java/jetbrains/buildServer/xldeploy/agent/XldPackageAgentBuildRunner.java
+/Users/user/repo/teamcity-xldeploy-plugin/teamcity-xldeploy-agent/src/main/java/jetbrains/buildServer/xldeploy/agent/XldAgentUtilities.java
+/Users/user/repo/teamcity-xldeploy-plugin/teamcity-xldeploy-agent/src/main/java/jetbrains/buildServer/xldeploy/agent/XldCustomCharacterEscapeHandler.java
+/Users/user/repo/teamcity-xldeploy-plugin/teamcity-xldeploy-agent/src/main/java/jetbrains/buildServer/xldeploy/agent/XldPublishAgentBuildRunner.java
+/Users/user/repo/teamcity-xldeploy-plugin/teamcity-xldeploy-agent/src/main/java/jetbrains/buildServer/xldeploy/agent/XldPublishBuildProcess.java
+/Users/user/repo/teamcity-xldeploy-plugin/teamcity-xldeploy-agent/src/main/java/jetbrains/buildServer/xldeploy/agent/XldDeploymentPackage.java
+/Users/user/repo/teamcity-xldeploy-plugin/teamcity-xldeploy-agent/src/main/java/jetbrains/buildServer/xldeploy/agent/XldPackageBuildProcess.java
+/Users/user/repo/teamcity-xldeploy-plugin/teamcity-xldeploy-agent/src/main/java/jetbrains/buildServer/xldeploy/agent/XldDeployAgentBuildRunner.java

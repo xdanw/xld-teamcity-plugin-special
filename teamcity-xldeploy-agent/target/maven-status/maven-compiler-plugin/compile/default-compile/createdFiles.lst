@@ -1,0 +1,9 @@
+jetbrains/buildServer/xldeploy/agent/XldCustomCharacterEscapeHandler.class
+jetbrains/buildServer/xldeploy/agent/XldDeployAgentBuildRunner.class
+jetbrains/buildServer/xldeploy/agent/XldPackageBuildProcess.class
+jetbrains/buildServer/xldeploy/agent/XldAgentUtilities.class
+jetbrains/buildServer/xldeploy/agent/XldDeploymentPackage.class
+jetbrains/buildServer/xldeploy/agent/XldPublishAgentBuildRunner.class
+jetbrains/buildServer/xldeploy/agent/XldPublishBuildProcess.class
+jetbrains/buildServer/xldeploy/agent/XldDeployBuildProcess.class
+jetbrains/buildServer/xldeploy/agent/XldPackageAgentBuildRunner.class

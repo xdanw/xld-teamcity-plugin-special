@@ -1,0 +1,9 @@
+jetbrains/buildServer/xldeploy/server/XldPublishRunTypePropertiesProcessor.class
+jetbrains/buildServer/xldeploy/server/XldDeployConstantsBean.class
+jetbrains/buildServer/xldeploy/server/XldDeployRunTypePropertiesProcessor.class
+jetbrains/buildServer/xldeploy/server/XldPackageRunType.class
+jetbrains/buildServer/xldeploy/server/XldPublishRunType.class
+jetbrains/buildServer/xldeploy/server/XldDeployRunType.class
+jetbrains/buildServer/xldeploy/server/XldPackageConstantsBean.class
+jetbrains/buildServer/xldeploy/server/XldPackageRunTypePropertiesProcessor.class
+jetbrains/buildServer/xldeploy/server/XldPublishConstantsBean.class
