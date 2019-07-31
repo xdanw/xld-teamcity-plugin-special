@@ -30,15 +30,22 @@ public class XldPublishBuildProcess implements BuildProcess {
     String contextRoot;
     String credential;
     String scheme;
+    
+    OkHttpClient client2;
 
     public XldPublishBuildProcess(AgentRunningBuild runningBuild, BuildRunnerContext context) throws RunBuildException {
 
         final Map<String, String> runnerParameters = context.getRunnerParameters();
 
         logger = runningBuild.getBuildLogger();
-        logger.progressStarted("Progress started for XldPublishBuildProcess");
+        logger.progressStarted("Progress started for XldPublishBuildProcess (with 300sec timeout)");
 
         client = new OkHttpClient();
+        
+        client2 = new OkHttpClient.Builder()
+          .readTimeout(300, java.util.concurrent.TimeUnit.SECONDS)
+          .writeTimeout(300, java.util.concurrent.TimeUnit.SECONDS)
+          .build();
 
         host = runnerParameters.get(XldPublishConstants.SETTINGS_XLDPUBLISH_HOST);
         port = Integer.parseInt(runnerParameters.get(XldPublishConstants.SETTINGS_XLDPUBLISH_PORT));
@@ -125,7 +132,7 @@ public class XldPublishBuildProcess implements BuildProcess {
                 .build();
 
         try {
-            Response response = client.newCall(request).execute();
+            Response response = client2.newCall(request).execute();
 
             if (response.isSuccessful()) {
                 logger.message(String.format("Package published successfully %s", file.getName()));

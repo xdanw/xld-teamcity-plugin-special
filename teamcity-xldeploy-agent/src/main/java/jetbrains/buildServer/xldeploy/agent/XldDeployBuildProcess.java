@@ -355,40 +355,30 @@ public class XldDeployBuildProcess implements BuildProcess {
     private JSONObject validate (JSONObject deploymentSpec) throws RunBuildException {
 
 /* Zendesk 7578, JIRA-10909 resolved in XL Deploy 8.6
-
-        logger.message("Validate step omitted pending resolution of Zendesk 7587, JIRA DEPL-10909");
-        return deploymentSpec;
 */
+        logger.message("Validate step omitted for older XLD 8.5 version.");
+        return deploymentSpec;
+
+/*
 
         HttpUrl httpUrl = getXldBaseUrlBuilder()
                 .addPathSegment("deployment")
                 .addPathSegment("validate")
                 .build();
-
         MediaType JSON = MediaType.parse("application/json; charset=utf-8");
-
         RequestBody requestBody = RequestBody.create(JSON, deploymentSpec.toString());
-
         Request request = new Request.Builder()
                 .url(httpUrl)
                 .header("Authorization", credential)
                 .header("Accept", "application/json")
-                .header("Content-Type", "application/json")
                 .post(requestBody)
                 .build();
-
         JSONObject jsonObject = null;
         Response response = null;
-
         try {
             response = client.newCall(request).execute();
-
-            if (response.isSuccessful() || response.code() == 400) {
-                try {
-                    jsonObject = new JSONObject(response.body().string());
-                } catch (JSONException e) {
-                    throw new RunBuildException(e);
-                }
+            if (response.isSuccessful()) {
+                jsonObject = new JSONObject(response.body().string());
             } else {
                 throw new IOException("Unexpected response code " + response);
             }
@@ -398,27 +388,20 @@ public class XldDeployBuildProcess implements BuildProcess {
         } finally {
             response.close();
         }
-
         // loop structure
-
         boolean error = false;
-
-        if (jsonObject.keySet().contains("deployeds")) {
-            for (Object deployed : jsonObject.getJSONArray("deployeds")) {
-                if (((JSONObject)deployed).keySet().contains("validation-messages")) {
-                    for (Object validationMessage : ((JSONObject)deployed).getJSONArray("validation-messages")) {
-                        error = true;
-                        logger.message(((JSONObject)validationMessage).toString());
-                    }
-                }
+        for (Object deployed : jsonObject.getJSONArray("deployeds")) {
+            for (Object validationMessage : ((JSONObject)deployed).getJSONArray("validation-messages")) {
+                error = true;
+                logger.message(((JSONObject)validationMessage).toString();
             }
         }
-
         if (error){
             throw new RunBuildException("Validation warnings/errors found");
         }
-
         return jsonObject;
+        
+        */
 
     }
 
